@@ -3,41 +3,41 @@ const uuidv4 = require('uuid/v4');
 
 module.exports = app => {
   
-  const gamesDB = app.data.games;
+  const carrosDB = app.data.carros;
   const controller = {};
 
-  const { games: gamesMock, } = gamesDB;
+  const { carros: carrosMock, } = carrosDB;
 
-  controller.listGames = (req, res) => res.status(200).json(gamesDB);
+  controller.listCarros = (req, res) => res.status(200).json(carrosDB);
 
-  controller.saveGames = (req, res) => {
-    gamesMock.data.push({
+  controller.saveCarros = (req, res) => {
+    carrosMock.data.push({
       id: uuidv4(),
       title: req.body.title,
       year: req.body.year,
       type: req.body.type
     });
 
-    res.status(201).json(gamesMock);
+    res.status(201).json(carrosMock);
   }
 
-  controller.removeGames = (req, res) => {
-    const { gameId, } = req.params;
+  controller.removeCarros = (req, res) => {
+    const { carroId, } = req.params;
 
-    const foundGameIndex = gamesMock.data.findIndex(game => game.id === gameId);
+    const foundCarroIndex = gamesMock.data.findIndex(carros => carros.id === carrosId);
 
-    if(foundGameIndex === -1){
+    if(foundCarroIndex === -1){
       res.status(404).json({
-        message: 'Game não encontrado',
+        message: 'Carro não encontrado',
         success: false,
-        games: gamesMock,
+        carros: carrosMock,
       });
     }else {
-      gamesMock.data.splice(foundGameIndex, 1);
+      carrosMock.data.splice(foundCarrosIndex, 1);
       res.status(200).json({
-        message: 'Game removido com sucesso!',
+        message: 'Carro removido com sucesso!',
         success: true,
-        games: gamesMock,
+        carros: carrosMock,
       });
     }
 

@@ -3,21 +3,21 @@
     "data": [
       {
         "id": "123",
-        "title": "God of War",
+        "title": "Alfa Romeo",
         "year": "2012",
-        "type": "Adventure"
+        "collor": "Azul"
       },
       {
         "id": "124",
-        "title": "The Last of US",
+        "title": "Honda Civic",
         "year": "2019",
-        "type": "Horror"
+        "collor": "Prata"
       },
       {
         "id": "125",
-        "title": "Call of Duty - WWW",
+        "title": "Corolla",
         "year": "2020",
-        "type": "Action"
+        "collor": "Preto"
       }
     ]
   }
